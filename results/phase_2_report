@@ -1,0 +1,72 @@
+starting test scenarios!
+starting controller
+starting topology and tests
+
+Ping connectivity ([Y]es/[N]o)
+      h1  h2  h3  h4 ws1 ws2 ws3 lb1
+h1     Y   Y   N   N   N   N   N   Y
+h2     Y   Y   N   N   N   N   N   Y
+h3     Y   Y   Y   Y   N   N   N   Y
+h4     Y   Y   Y   Y   N   N   N   Y
+ws1    N   N   N   N   Y   Y   Y   Y
+ws2    N   N   N   N   Y   Y   Y   Y
+ws3    N   N   N   N   Y   Y   Y   Y
+lb1    Y   Y   N   N   N   Y   Y   Y
+
+  correct: h1 in PbZ cannot ping 10.0.0.51 in PrZ
+  correct: h1 in PbZ cannot ping 10.0.0.50 in PrZ
+  correct: h2 in PbZ cannot ping 10.0.0.51 in PrZ
+  correct: h2 in PbZ cannot ping 10.0.0.50 in PrZ
+  correct: h4 in PrZ can ping 100.0.0.10 in PbZ
+  correct: h4 in PrZ can ping 100.0.0.11 in PbZ
+  correct: h3 in PrZ can ping 100.0.0.10 in PbZ
+  correct: h3 in PrZ can ping 100.0.0.11 in PbZ
+  correct: h4 cannot ping 100.0.0.42 in DmZ
+  correct: h4 cannot ping 100.0.0.41 in DmZ
+  correct: h4 cannot ping 100.0.0.40 in DmZ
+  correct: h1 cannot ping 100.0.0.42 in DmZ
+  correct: h1 cannot ping 100.0.0.41 in DmZ
+  correct: h1 cannot ping 100.0.0.40 in DmZ
+  correct: h3 cannot ping 100.0.0.42 in DmZ
+  correct: h3 cannot ping 100.0.0.41 in DmZ
+  correct: h3 cannot ping 100.0.0.40 in DmZ
+  correct: h2 cannot ping 100.0.0.42 in DmZ
+  correct: h2 cannot ping 100.0.0.41 in DmZ
+  correct: h2 cannot ping 100.0.0.40 in DmZ
+  correct: h4 can ping 100.0.0.45 lb1
+  correct: h1 can ping 100.0.0.45 lb1
+  correct: h3 can ping 100.0.0.45 lb1
+  correct: h2 can ping 100.0.0.45 lb1
+  correct: ws3 cannot ping 100.0.0.10 in PbZ
+  correct: ws3 cannot ping 100.0.0.11 in PbZ
+  correct: ws2 cannot ping 100.0.0.10 in PbZ
+  correct: ws2 cannot ping 100.0.0.11 in PbZ
+  correct: ws1 cannot ping 100.0.0.10 in PbZ
+  correct: ws1 cannot ping 100.0.0.11 in PbZ
+  correct: ws3 cannot ping 10.0.0.51 in PrZ
+  correct: ws3 cannot ping 10.0.0.50 in PrZ
+  correct: ws2 cannot ping 10.0.0.51 in PrZ
+  correct: ws2 cannot ping 10.0.0.50 in PrZ
+  correct: ws1 cannot ping 10.0.0.51 in PrZ
+  correct: ws1 cannot ping 10.0.0.50 in PrZ
+  correct: h4 from PrZ can curl lb1 with PUT and payload:other
+  correct: h1 from PrZ can curl lb1 with PUT and payload:other
+  correct: h3 from PrZ can curl lb1 with PUT and payload:other
+  correct: h2 from PrZ can curl lb1 with PUT and payload:other
+  correct: h4 from PrZ cannot curl lb1 with PUT and payload:UPDATE
+  correct: h1 from PrZ cannot curl lb1 with PUT and payload:UPDATE
+  correct: h3 from PrZ cannot curl lb1 with PUT and payload:UPDATE
+  correct: h2 from PrZ cannot curl lb1 with PUT and payload:UPDATE
+  correct: h4 from PrZ cannot curl lb1 with GET
+  correct: h1 from PrZ cannot curl lb1 with GET
+  correct: h3 from PrZ cannot curl lb1 with GET
+  correct: h2 from PrZ cannot curl lb1 with GET
+  correct: h4 from PrZ can curl lb1 with POST with payload:other
+  correct: h1 from PrZ can curl lb1 with POST with payload:other
+  correct: h3 from PrZ can curl lb1 with POST with payload:other
+  correct: h2 from PrZ can curl lb1 with POST with payload:other
+
+---------------FINAL RESULT---------------
+Correct: All tests finished as expected
+
+cleaning up controller

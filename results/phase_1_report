@@ -1,0 +1,60 @@
+starting test scenarios!
+starting controller
+starting topology and tests
+
+Ping connectivity ([Y]es/[N]o)
+      h1  h2  h3  h4 ws1 ws2 ws3
+h1     Y   Y   N   N   N   N   N
+h2     Y   Y   N   N   N   N   N
+h3     Y   Y   Y   Y   N   N   N
+h4     Y   Y   Y   Y   N   N   N
+ws1    Y   Y   N   N   Y   Y   Y
+ws2    Y   Y   N   N   Y   Y   Y
+ws3    Y   Y   N   N   Y   Y   Y
+
+  correct: h2 in PbZ cannot ping 100.0.0.50 in PrZ
+  correct: h2 in PbZ cannot ping 100.0.0.51 in PrZ
+  correct: h1 in PbZ cannot ping 100.0.0.50 in PrZ
+  correct: h1 in PbZ cannot ping 100.0.0.51 in PrZ
+  correct: h3 in PrZ can ping 100.0.0.11 in PbZ
+  correct: h3 in PrZ can ping 100.0.0.10 in PbZ
+  correct: h4 in PrZ can ping 100.0.0.11 in PbZ
+  correct: h4 in PrZ can ping 100.0.0.10 in PbZ
+  correct: h2 cannot ping 100.0.0.40 in DmZ
+  correct: h2 cannot ping 100.0.0.42 in DmZ
+  correct: h2 cannot ping 100.0.0.41 in DmZ
+  correct: h1 cannot ping 100.0.0.40 in DmZ
+  correct: h1 cannot ping 100.0.0.42 in DmZ
+  correct: h1 cannot ping 100.0.0.41 in DmZ
+  correct: h4 cannot ping 100.0.0.40 in DmZ
+  correct: h4 cannot ping 100.0.0.42 in DmZ
+  correct: h4 cannot ping 100.0.0.41 in DmZ
+  correct: h3 cannot ping 100.0.0.40 in DmZ
+  correct: h3 cannot ping 100.0.0.42 in DmZ
+  correct: h3 cannot ping 100.0.0.41 in DmZ
+  correct: ws1 can ping 100.0.0.11 in PbZ
+  correct: ws1 can ping 100.0.0.10 in PbZ
+  correct: ws3 can ping 100.0.0.11 in PbZ
+  correct: ws3 can ping 100.0.0.10 in PbZ
+  correct: ws2 can ping 100.0.0.11 in PbZ
+  correct: ws2 can ping 100.0.0.10 in PbZ
+  correct: ws1 cannot ping 100.0.0.50 in PrZ
+  correct: ws1 cannot ping 100.0.0.51 in PrZ
+  correct: ws3 cannot ping 100.0.0.50 in PrZ
+  correct: ws3 cannot ping 100.0.0.51 in PrZ
+  correct: ws2 cannot ping 100.0.0.50 in PrZ
+  correct: ws2 cannot ping 100.0.0.51 in PrZ
+  correct: h2 from PrZ can curl ws3
+  correct: h1 from PrZ can curl ws3
+  correct: h4 from PrZ can curl ws3
+  correct: h3 from PrZ can curl ws3
+  correct: h2 from PrZ can curl ws3 with payload
+  correct: h1 from PrZ can curl ws3 with payload
+  correct: h4 from PrZ can curl ws3 with payload
+  correct: h3 from PrZ can curl ws3 with payload
+
+---------------FINAL RESULT---------------
+Correct: All tests finished as expected
+
+cleaning up controller
+killall make

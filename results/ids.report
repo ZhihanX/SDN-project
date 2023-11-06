@@ -1,0 +1,17 @@
+=================== IDS report ===================
+		Input Packet Rate (pps): 0.241896468312
+		Output Packet Rate (pps): 0.241896468312
+
+		Total # of IP packets: 0
+		Total # of non-IP packets: 2
+
+		Total # of HTTP packets: 0
+		Total # of POST requests: 0
+		Total # of PUT requests: 0
+		Total # of PUT requests with filtered injections: 0
+		Total # of PUT requests without filtered injections: 0
+
+		Total # of input packets: 2
+		Total # of forwarded packets: 2
+		Total # of diverted packets: 0
+		==================================================
